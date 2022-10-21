@@ -42,11 +42,15 @@ export default defineInterface({
 							text: '$t:serif',
 							value: 'serif',
 						},
+						{
+							text: 'IBM Plex',
+							value: 'ibm',
+						},
 					],
 				},
 			},
 			schema: {
-				default_value: 'sans-serif',
+				default_value: 'ibm',
 			},
 		},
 		{
@@ -54,7 +58,7 @@ export default defineInterface({
 			name: '$t:interfaces.input-rich-text-html.toolbar',
 			type: 'json',
 			schema: {
-				default_value: ['header', 'nestedlist', 'code', 'image', 'paragraph', 'delimiter', 'checklist', 'quote', 'underline'],
+				default_value: ['header', 'list', 'code', 'image', 'paragraph', 'delimiter', 'quote', 'underline', 'twitter'],
 			},
 			meta: {
 				width: 'half',
@@ -67,15 +71,7 @@ export default defineInterface({
 						},
 						{
 							value: 'list',
-							text: 'List (legacy)',
-						},
-						{
-							value: 'nestedlist',
-							text: 'Nested List',
-						},
-						{
-							value: 'embed',
-							text: 'Embed',
+							text: 'List',
 						},
 						{
 							value: 'paragraph',
@@ -88,14 +84,6 @@ export default defineInterface({
 						{
 							value: 'image',
 							text: 'Image',
-						},
-						{
-							value: 'warning',
-							text: 'Warning',
-						},
-						{
-							value: 'attaches',
-							text: 'Attaches',
 						},
 						{
 							value: 'table',
@@ -122,10 +110,6 @@ export default defineInterface({
 							text: 'Inline Code',
 						},
 						{
-							value: 'alert',
-							text: 'Alert',
-						},
-						{
 							value: 'strikethrough',
 							text: 'Strikethrough',
 						},
@@ -138,16 +122,8 @@ export default defineInterface({
 							text: 'Alignment',
 						},
 						{
-							value: 'checklist',
-							text: 'Checklist',
-						},
-						{
-							value: 'personality',
-							text: 'Personality',
-						},
-						{
-							value: 'raw',
-							text: 'Raw HTML',
+							value: 'twitter',
+							text: 'Twitter Embed',
 						},
 					],
 				},

@@ -1,5 +1,5 @@
 <template>
-	<div ref="editorElement" :class="{ [font]: true, disabled, bordered }"></div>
+	<div ref="editorElement" id="editorjs" :class="{ [font]: true, disabled, bordered }"></div>
 
 	<v-drawer
 		v-if="haveFilesAccess && !disabled"
@@ -49,7 +49,7 @@ const props = withDefaults(
 		placeholder?: string;
 		tools: string[];
 		folder?: string;
-		font: 'sans-serif' | 'monospace' | 'serif';
+		font: 'sans-serif' | 'monospace' | 'serif' | 'ibm';
 	}>(),
 	{
 		disabled: false,
@@ -58,7 +58,7 @@ const props = withDefaults(
 		value: () => null,
 		bordered: true,
 		tools: () => ['header', 'nestedlist', 'code', 'image', 'paragraph', 'delimiter', 'checklist', 'quote', 'underline'],
-		font: 'sans-serif',
+		font: 'ibm',
 	}
 );
 
@@ -95,6 +95,10 @@ const tools = getTools(
 
 onMounted(() => {
 	const initialValue = getSanitizedValue(props.value);
+	const script = document.createElement('script');
+	script.src = 'https://platform.twitter.com/widgets.js';
+	document.body.appendChild(script);
+	script.setAttribute('data-testid', 'twitter-script');
 
 	editorjsInstance.value = new EditorJS({
 		i18n: getTranslations(t),
@@ -212,6 +216,10 @@ function getSanitizedValue(value: any): EditorJS.OutputData | null {
 
 .sans-serif {
 	font-family: var(--family-sans-serif);
+}
+
+.ibm {
+	font-family: 'IBM Plex Sans Thai Looped', sans-serif;
 }
 
 .uploader-drawer-content {

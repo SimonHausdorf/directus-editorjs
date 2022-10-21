@@ -1,25 +1,18 @@
-import SimpleImageTool from '@editorjs/simple-image';
+import CodeTool from '@editorjs/code';
+import DelimiterTool from '@editorjs/delimiter';
+import HeaderTool from '@editorjs/header';
+import InlineCodeTool from '@editorjs/inline-code';
+import MarkerTool from '@editorjs/marker';
 import ParagraphTool from '@editorjs/paragraph';
 import QuoteTool from '@editorjs/quote';
-import WarningTool from '@editorjs/warning';
-import ChecklistTool from '@editorjs/checklist';
-import DelimiterTool from '@editorjs/delimiter';
+import SimpleImageTool from '@editorjs/simple-image';
 import TableTool from '@editorjs/table';
-import CodeTool from '@editorjs/code';
-import HeaderTool from '@editorjs/header';
 import UnderlineTool from '@editorjs/underline';
-import EmbedTool from '@editorjs/embed';
-import MarkerTool from '@editorjs/marker';
-import RawToolTool from '@editorjs/raw';
-import InlineCodeTool from '@editorjs/inline-code';
-import AlertTool from 'editorjs-alert';
 import StrikethroughTool from '@itech-indrustries/editorjs-strikethrough';
-import AlignmentTuneTool from 'editorjs-text-alignment-blocktune';
-import NestedListTool from '@editorjs/nested-list';
 import ListTool from 'editorjs-list';
+import AlignmentTuneTool from 'editorjs-text-alignment-blocktune';
+import Twitter from 'twitter-embed-editorjs-plugin';
 import ImageTool from './custom-plugins/plugin-image-patch.js';
-import AttachesTool from './custom-plugins/plugin-attaches-patch.js';
-import PersonalityTool from './custom-plugins/plugin-personality-patch.js';
 
 export type UploaderConfig = {
 	addTokenToURL: (url: string, token: string) => string;
@@ -36,27 +29,22 @@ export default function getTools(
 	haveFilesAccess: boolean
 ): Record<string, object> {
 	const tools: Record<string, any> = {};
-	const fileRequiresTools = ['attaches', 'personality', 'image'];
+	const fileRequiresTools = ['image'];
 
 	const defaults: Record<string, any> = {
 		header: {
 			class: HeaderTool,
 			shortcut: 'CMD+SHIFT+H',
 			inlineToolbar: true,
+			config: {
+				levels: [2],
+				defaultLevel: 2,
+			},
 		},
 		list: {
 			class: ListTool,
 			inlineToolbar: false,
 			shortcut: 'CMD+SHIFT+1',
-		},
-		nestedlist: {
-			class: NestedListTool,
-			inlineToolbar: true,
-			shortcut: 'CMD+SHIFT+L',
-		},
-		embed: {
-			class: EmbedTool,
-			inlineToolbar: true,
 		},
 		paragraph: {
 			class: ParagraphTool,
@@ -65,10 +53,8 @@ export default function getTools(
 		code: {
 			class: CodeTool,
 		},
-		warning: {
-			class: WarningTool,
-			inlineToolbar: true,
-			shortcut: 'CMD+SHIFT+W',
+		twitter: {
+			class: Twitter,
 		},
 		underline: {
 			class: UnderlineTool,
@@ -76,9 +62,6 @@ export default function getTools(
 		},
 		strikethrough: {
 			class: StrikethroughTool,
-		},
-		alert: {
-			class: AlertTool,
 		},
 		table: {
 			class: TableTool,
@@ -100,30 +83,11 @@ export default function getTools(
 		delimiter: {
 			class: DelimiterTool,
 		},
-		raw: {
-			class: RawToolTool,
-		},
-		checklist: {
-			class: ChecklistTool,
-			inlineToolbar: true,
-		},
 		simpleimage: {
 			class: SimpleImageTool,
 		},
 		image: {
 			class: ImageTool,
-			config: {
-				uploader: uploaderConfig,
-			},
-		},
-		attaches: {
-			class: AttachesTool,
-			config: {
-				uploader: uploaderConfig,
-			},
-		},
-		personality: {
-			class: PersonalityTool,
 			config: {
 				uploader: uploaderConfig,
 			},
