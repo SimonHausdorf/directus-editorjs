@@ -1,19 +1,18 @@
 {
-  "name": "directus-extension-editorjs",
+  "name": "directus-editorjs",
   "version": "1.5.1",
   "author": {
-    "email": "dimitrovadrian+gh@gmail.com",
-    "name": "Adrian Dimitrov"
+    "name": "Simon Hausdorf"
   },
   "license": "gpl-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dimitrov-adrian/directus-extension-editorjs-interface.git"
+    "url": "https://github.com/SimonHausdorf/directus-editorjs"
   },
   "bugs": {
-    "url": "https://github.com/dimitrov-adrian/directus-extension-editorjs-interface/issues"
+    "url": "https://github.com/SimonHausdorf/directus-editorjs/issues"
   },
-  "homepage": "https://github.com/dimitrov-adrian/directus-extension-editorjs-interface",
+  "homepage": "https://github.com/SimonHausdorf/directus-editorjs",
   "keywords": [
     "directus",
     "directus-extension",
