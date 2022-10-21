@@ -1,5 +1,5 @@
 {
-  "name": "directus-editorjs",
+  "name": "directus-extension-editorjs2",
   "version": "1.5.1",
   "author": {
     "name": "Simon Hausdorf"
@@ -7,12 +7,12 @@
   "license": "gpl-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SimonHausdorf/directus-editorjs"
+    "url": "https://github.com/SimonHausdorf/directus-extension-editorjs2"
   },
   "bugs": {
-    "url": "https://github.com/SimonHausdorf/directus-editorjs/issues"
+    "url": "https://github.com/SimonHausdorf/directus-extension-editorjs2/issues"
   },
-  "homepage": "https://github.com/SimonHausdorf/directus-editorjs",
+  "homepage": "https://github.com/SimonHausdorf/directus-extension-editorjs2",
   "keywords": [
     "directus",
     "directus-extension",
