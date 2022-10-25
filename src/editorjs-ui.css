@@ -9,7 +9,7 @@
 	margin-bottom: 1.2em;
 }
 
-.dark .codex-editor .ce-block .ce-paragraph {
+.dark .codex-editor .cdx-quote__text, .dark ce-header, .dark .codex-editor .ce-block .ce-paragraph, .codex-editor .ce-block h2, .codex-editor .ce-block h3, .codex-editor .ce-block h4, .codex-editor .ce-block .image-tool__caption {
 	color: rgb(201, 209, 217);
 }
 
