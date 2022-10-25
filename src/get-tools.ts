@@ -37,7 +37,7 @@ export default function getTools(
 			shortcut: 'CMD+SHIFT+H',
 			inlineToolbar: true,
 			config: {
-				levels: [2],
+				levels: [2, 3],
 				defaultLevel: 2,
 			},
 		},
