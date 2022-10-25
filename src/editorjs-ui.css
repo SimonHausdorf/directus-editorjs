@@ -9,6 +9,10 @@
 	margin-bottom: 1.2em;
 }
 
+.dark .codex-editor .ce-block .ce-paragraph {
+	color: rgb(201, 209, 217);
+}
+
 .codex-editor li {
 	color: rgb(25, 27, 30);
 	font-size: 1.25rem;
