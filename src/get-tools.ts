@@ -1,5 +1,6 @@
 import CodeTool from '@editorjs/code';
 import DelimiterTool from '@editorjs/delimiter';
+import Embed from '@editorjs/embed';
 import HeaderTool from '@editorjs/header';
 import InlineCodeTool from '@editorjs/inline-code';
 import MarkerTool from '@editorjs/marker';
@@ -94,6 +95,14 @@ export default function getTools(
 		},
 		alignmentTune: {
 			class: AlignmentTuneTool,
+		},
+		embed: {
+			class: Embed,
+			config: {
+				services: {
+					youtube: true,
+				},
+			},
 		},
 	};
 
