@@ -57,7 +57,18 @@ const props = withDefaults(
 		autofocus: false,
 		value: () => null,
 		bordered: true,
-		tools: () => ['header', 'nestedlist', 'code', 'image', 'paragraph', 'delimiter', 'checklist', 'quote', 'underline', 'embed],
+		tools: () => [
+			'header',
+			'nestedlist',
+			'code',
+			'image',
+			'paragraph',
+			'delimiter',
+			'checklist',
+			'quote',
+			'underline',
+			'embed',
+		],
 		font: 'ibm',
 	}
 );
